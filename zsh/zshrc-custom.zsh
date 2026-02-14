@@ -12,6 +12,7 @@ alias lg="lazygit"
 alias nvd="nvim ~/dotfiles"
 alias nvz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
+alias nv="nvim"
 
 tm() {
   if [ "$1" = "a" ]; then
