@@ -11,6 +11,8 @@ bindkey -v
 alias lg="lazygit"
 alias nvd="nvim ~/dotfiles"
 alias nvz="nvim ~/.zshrc"
+alias nvzc="nvim ~/dotfiles/zsh/zshrc-custom.zsh"
+alias nvtm="nvim ~/.tmux.conf"
 alias sz="source ~/.zshrc"
 alias nv="nvim"
 
