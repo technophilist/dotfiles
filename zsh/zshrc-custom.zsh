@@ -9,6 +9,9 @@ bindkey -v
 
 # aliases
 alias lg="lazygit"
+alias nvd="nvim ~/dotfiles"
+alias nvz="nvim ~/.zshrc"
+alias sz="source ~/.zshrc"
 
 tm() {
   if [ "$1" = "a" ]; then
