@@ -16,11 +16,6 @@ local keybindings = require("keybindings")
 vim.g.mapleader = keybindings.LEADER
 vim.g.maplocalleader = "\\"
 
--- window navigation key bindings
-vim.keymap.set("n", keybindings.WINDOW_MOVE_LEFT, "<C-w>h", { desc = "Move to left window" })
-vim.keymap.set("n", keybindings.WINDOW_MOVE_DOWN, "<C-w>j", { desc = "Move to bottom window" })
-vim.keymap.set("n", keybindings.WINDOW_MOVE_UP, "<C-w>k", { desc = "Move to top window" })
-vim.keymap.set("n", keybindings.WINDOW_MOVE_RIGHT, "<C-w>l", { desc = "Move to right window" })
 -- Stage the current file
 vim.keymap.set('n', keybindings.GIT_STAGE_CURRENT_FILE, ':!git add %<CR><CR>', { desc = 'Git stage current file' })
 

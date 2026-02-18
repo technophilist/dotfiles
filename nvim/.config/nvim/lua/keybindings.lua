@@ -2,11 +2,6 @@
 local M = {}
 -- Leader Key
 M.LEADER = " "
--- Window Navigation
-M.WINDOW_MOVE_LEFT = "<leader>wh"
-M.WINDOW_MOVE_DOWN = "<leader>wj"
-M.WINDOW_MOVE_UP = "<leader>wk"
-M.WINDOW_MOVE_RIGHT = "<leader>wl"
 
 -- File Explorer (Neo-tree)
 M.NEOTREE_TOGGLE = "<leader>1"
