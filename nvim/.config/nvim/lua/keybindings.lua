@@ -36,4 +36,7 @@ M.TELESCOPE_LIVE_GREP = "<leader>f"
 
 -- Lazy Git
 M.OPEN_LAZY_GIT = "<leader>gg"
+
+-- General Utils
+M.YANK_CURRENT_DIRECTORY_OF_FILE = "<leader>yd"
 return M
