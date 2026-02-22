@@ -1,8 +1,15 @@
+# set default editor to nvim
+export VISUAL="nvim"
+export EDITOR="nvim"
+
 # init starship prompt
 eval "$(starship init zsh)"
 
-# display system info
-fastfetch
+# display system info once per shell instance
+if [[ -z "$FASTFETCH_SHOWN" ]]; then
+    fastfetch
+    export FASTFETCH_SHOWN=1
+fi
 
 # enable vim
 bindkey -v
