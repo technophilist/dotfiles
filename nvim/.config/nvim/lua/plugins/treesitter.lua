@@ -1,7 +1,6 @@
 return {
 	-- for generating AST: used for highlighting and indenting
 	"nvim-treesitter/nvim-treesitter",
-	commit = "45a07f869b0cffba342276f2c77ba7c116d35db8",
 	lazy = false,
 	build = ":TSUpdate",
 	config = function()
@@ -16,10 +15,7 @@ return {
 				"lua",
 				"python",
 			},
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = false,
-			},
+			highlight = { enable = true },
 			indent = { enable = true },
 		})
 	end,
