@@ -24,14 +24,10 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local keybindings = require("keybindings")
-			-- add capabilities to all clients
-			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			-- vim.lsp.config("*", { capabilities = capabilities })
-			--
 			-- make neovim to communicate with language servers
 			vim.lsp.enable("lua_ls")
 			vim.lsp.enable("ts_ls")
-			vim.lsp.enable("es-lint")
+			vim.lsp.enable("eslint")
 
 		vim.keymap.set("n", keybindings.LSP_HOVER, vim.lsp.buf.hover, { desc = "Show hover information" })
 		vim.keymap.set("n", keybindings.LSP_DEFINITION, vim.lsp.buf.definition, { desc = "Go to definition" })
