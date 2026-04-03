@@ -6,6 +6,8 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 -- number of spaces used for auto-indent (can be used by language servers / plugins
 vim.cmd("set shiftwidth=2")
+-- insert spaces instead of \t for tab character (tab button). Ensures consistent indentation across editors and tools.
+vim.opt.expandtab = true
 -- LuaLine already configured. Disable the default mode line.
 vim.opt.showmode = false
 
