@@ -22,6 +22,11 @@ alias nvtm="nvim ~/.tmux.conf"
 alias sz="source ~/.zshrc"
 alias nv="nvim"
 
+nvf() {
+  local dir
+  dir=$(find "$DEV_PROJECT_DIR" -maxdepth 3 -not -path '*/\.*' | fzf) && cd "$dir" && nvim .
+}
+
 tm() {
   if [ "$1" = "a" ]; then
     tmux attach -t "$2"
