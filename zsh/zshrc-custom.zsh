@@ -24,7 +24,7 @@ alias nv="nvim"
 
 nvf() {
   local dir
-  dir=$(find "$DEV_PROJECT_DIR" -maxdepth 3 -not -path '*/\.*' | fzf) && cd "$dir" && nvim .
+  dir=$(find "$DEV_PROJECTS_DIR/" -maxdepth 3 -not -path '*/\.*' | fzf) && cd "$dir" && nvim .
 }
 
 tm() {
