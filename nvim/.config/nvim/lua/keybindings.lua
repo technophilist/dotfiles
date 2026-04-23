@@ -39,4 +39,11 @@ M.OPEN_LAZY_GIT = "<leader>gg"
 
 -- General Utils
 M.YANK_CURRENT_DIRECTORY_OF_FILE = "<leader>yd"
+
+-- Neotest
+M.NEOTEST_RUN_FILE = "<leader>t"
+M.NEOTEST_RUN_NEAREST = "<leader>tt"
+M.NEOTEST_TOGGLE_SUMMARY = "<leader>ts"
+M.NEOTEST_SHOW_OUTPUT = "<leader>to"
+
 return M
