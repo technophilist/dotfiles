@@ -16,15 +16,29 @@ bindkey -v
 
 # aliases
 alias lg="lazygit"
-alias nvd="cd ~/dotfiles && nvim ."
-alias nvz="nvim ~/.zshrc"
-alias nvtm="nvim ~/.tmux.conf"
+
+# nvim wrappers set TMUX_PANE_DIR before opening nvim so tmux splits inherit the
+# correct CWD. on macOS, #{pane_current_path} reads the foreground process CWD
+# (nvim) instead of the shell's, so we store it manually in a tmux env var.
+nvd() {
+  cd ~/dotfiles
+  tmux set-environment TMUX_PANE_DIR "$PWD"
+  nvim .
+}
+nvz() { tmux set-environment TMUX_PANE_DIR "$PWD" && nvim ~/.zshrc; }
+nvtm() { tmux set-environment TMUX_PANE_DIR "$PWD" && nvim ~/.tmux.conf; }
 alias sz="source ~/.zshrc"
-alias nv="nvim"
+nv() {
+  tmux set-environment TMUX_PANE_DIR "$PWD"
+  nvim "$@"
+}
 
 nvf() {
   local dir
-  dir=$(find "$DEV_PROJECTS_DIR/" -maxdepth 3 -not -path '*/\.*' | fzf) && cd "$dir" && nvim .
+  dir=$(find "$DEV_PROJECTS_DIR/" -maxdepth 3 -type d -not -path '*/\.*' | fzf) || return
+  cd "$dir"
+  tmux set-environment TMUX_PANE_DIR "$PWD"
+  nvim .
 }
 
 tm() {
