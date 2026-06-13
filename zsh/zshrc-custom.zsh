@@ -16,6 +16,8 @@ bindkey -v
 
 # aliases
 alias lg="lazygit"
+alias kc="kiro-cli"
+alias kcr="kiro-cli chat --resume"
 
 # nvim wrappers set TMUX_PANE_DIR before opening nvim so tmux splits inherit the
 # correct CWD. on macOS, #{pane_current_path} reads the foreground process CWD
