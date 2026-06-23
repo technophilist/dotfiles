@@ -33,6 +33,6 @@ vim.opt.relativenumber = true
 -- always save to system clipboard
 vim.opt.clipboard = "unnamedplus"
 vim.keymap.set("n", keybindings.YANK_CURRENT_DIRECTORY_OF_FILE, function()
-	vim.fn.setreg("+", vim.fn.expand("%:p"))
-	print("Full file path copied to clipboard")
-end, { desc = "Copy full file path to clipboard" })
+	vim.fn.setreg("+", vim.fn.expand("%:p:h"))
+	print("Directory copied to clipboard")
+end, { desc = "Copy directory of current file to clipboard" })
