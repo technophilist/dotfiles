@@ -39,6 +39,7 @@ M.OPEN_LAZY_GIT = "<leader>gg"
 
 -- General Utils
 M.YANK_CURRENT_DIRECTORY_OF_FILE = "<leader>yd"
+M.YANK_CURRENT_FILE_PATH = "<leader>yp"
 
 -- Neotest
 M.NEOTEST_RUN_FILE = "<leader>t"
