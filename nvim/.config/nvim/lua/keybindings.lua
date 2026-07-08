@@ -47,4 +47,7 @@ M.NEOTEST_RUN_NEAREST = "<leader>tt"
 M.NEOTEST_TOGGLE_SUMMARY = "<leader>ts"
 M.NEOTEST_SHOW_OUTPUT = "<leader>to"
 
+-- Outline (symbols tree)
+M.OUTLINE_TOGGLE = "<leader>o"
+
 return M
