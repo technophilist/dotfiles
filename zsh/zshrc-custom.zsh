@@ -2,6 +2,9 @@
 export VISUAL="nvim"
 export EDITOR="nvim"
 
+# enable vim mode before starship init to avoid zle-keymap-select nesting conflict (starship_zle-keymap-select-wrapped:1: maximum nested function level reached; increase FUNCNEST?)
+bindkey -v
+
 # init starship prompt
 eval "$(starship init zsh)"
 
@@ -10,9 +13,6 @@ if [[ -z "$FASTFETCH_SHOWN" ]]; then
     fastfetch
     export FASTFETCH_SHOWN=1
 fi
-
-# enable vim
-bindkey -v
 
 # aliases
 alias lg="lazygit"
