@@ -52,3 +52,8 @@ tm() {
     tmux "$@"
   fi
 }
+
+# fh - fuzzy history search and run
+fh() {
+  eval $(history | fzf --tac --no-sort --height=40% | awk '{$1=""; print substr($0,2)}')
+}
