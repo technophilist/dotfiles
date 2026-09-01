@@ -27,14 +27,14 @@
                         "description": "App Launchers: Hyper+[key] → launch app",
                         "manipulators": [
                             {
-                                "description": "Hyper+B → Safari",
+                                "description": "Hyper+B → Google Chrome",
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": {
                                         "mandatory": ["shift", "control", "option", "command"]
                                     }
                                 },
-                                "to": [{ "shell_command": "open -a 'Safari'" }],
+                                "to": [{ "shell_command": "open -a 'Google Chrome'" }],
                                 "type": "basic"
                             },
                             {
