@@ -8,12 +8,6 @@ bindkey -v
 # init starship prompt
 eval "$(starship init zsh)"
 
-# display system info once per shell instance
-if [[ -z "$FASTFETCH_SHOWN" ]]; then
-    fastfetch
-    export FASTFETCH_SHOWN=1
-fi
-
 # aliases
 alias lg="lazygit"
 alias kc="kiro-cli"
