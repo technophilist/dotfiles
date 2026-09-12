@@ -27,13 +27,13 @@ return {
 		vim.keymap.set(
 			"n",
 			keybindings.NEOTREE_TOGGLE,
-			":Neotree filesystem toggle reveal right<CR>",
+			"<cmd>Neotree filesystem toggle reveal right<CR>",
 			{ desc = "Toggle Neo-tree file explorer" }
 		)
 		vim.keymap.set(
 			"n",
 			keybindings.NEOTREE_BUFFERS,
-			":Neotree buffers<CR>",
+			"<cmd>Neotree buffers<CR>",
 			{ desc = "Toggle Neo-tree current active buffers explorer" }
 		)
 	end,
