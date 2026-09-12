@@ -1,5 +1,9 @@
 ---@diagnostic disable: undefined-global
 
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- tab key = two spaces
 vim.cmd("set tabstop=2")
 -- controls how many spaces the Tab key inserts or deletes while editing.
