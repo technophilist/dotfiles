@@ -3,9 +3,10 @@ local M = {}
 -- Leader Key
 M.LEADER = " "
 
--- File Explorer (Neo-tree)
+-- File Explorer
 M.NEOTREE_TOGGLE = "<leader>1"
 M.NEOTREE_BUFFERS = "<leader>b"
+M.OIL_BUFFER = "-"
 
 -- Code Formatting (Conform)
 M.FORMAT_CODE = "<leader>l"
@@ -17,7 +18,7 @@ M.LSP_IMPLEMENTATION = "gi"
 M.LSP_CODE_ACTION = "<leader>ca"
 M.LSP_SIGNATURE_HELP = "<leader>p"
 
--- Code Diagnostics 
+-- Code Diagnostics
 -- 1. Show the error message in a floating window (The "E" in the gutter)
 M.SHOW_ERROR = "ge"
 M.SHOW_ALL_ERRORS = "gea"
