@@ -82,7 +82,7 @@ gaps.inner.horizontal = 16
 gaps.inner.vertical =   16
 gaps.outer.left =       16
 gaps.outer.bottom =     16
-gaps.outer.top =        [{ monitor."built-in" = 8 }, 40] # accommodate for notch
+gaps.outer.top =        [{ monitor."built-in" = 16 }, 40] # accommodate for notch
 gaps.outer.right =      16
 
 # 'main' binding mode declaration
