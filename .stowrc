@@ -1,0 +1,26 @@
+# GNU Stow defaults for this repo.
+#
+# Target defaults to the parent of this directory (i.e. $HOME for ~/dotfiles),
+# which keeps it working no matter where the repo is cloned.
+#
+# Running `stow */` passes every top-level directory as a package candidate.
+# These ignores make sure only real dotfile packages get linked.
+
+# VCS / repo internals (already covered by stow's built-in list, kept for clarity)
+--ignore=^\.git$
+--ignore=^\.gitignore$
+
+# top-level files that are not packages
+# (only a safety net -- `stow */` only matches directories, never files)
+--ignore=^\.stowrc$
+--ignore=^\.DS_Store$
+--ignore=^Brewfile$
+--ignore=^LICENSE$
+--ignore=^README\.md$
+--ignore=^bootstrap\.sh$
+
+# directories that mirror $HOME but are NOT stow packages
+--ignore=^font$
+--ignore=^iterm$
+--ignore=^screenshots$
+--ignore=^zsh$
