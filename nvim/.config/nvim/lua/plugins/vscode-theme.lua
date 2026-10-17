@@ -1,13 +1,8 @@
 return {
-	"Mofiqul/vscode.nvim",
+	"D0nw0r/dark2026.nvim",
+	lazy = false,
 	priority = 1000,
 	config = function()
-		require("vscode").setup({
-			transparent = false,
-			italic_comments = true,
-		})
-		vim.cmd.colorscheme("vscode")
-		-- ensures ts doc comments have proper highlighting
-		vim.api.nvim_set_hl(0, "typescriptDocComment", { link = "Comment" })
+		vim.cmd.colorscheme("dark2026")
 	end,
 }
