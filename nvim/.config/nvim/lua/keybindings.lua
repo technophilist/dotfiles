@@ -38,6 +38,9 @@ M.TELESCOPE_LIVE_GREP = "<leader>f"
 -- Lazy Git
 M.OPEN_LAZY_GIT = "<leader>gg"
 
+-- Inline Diff (Gitsigns: word diff + deleted lines)
+M.GIT_INLINE_DIFF_TOGGLE = "<leader>gd"
+
 -- General Utils
 M.YANK_CURRENT_DIRECTORY_OF_FILE = "<leader>yd"
 M.YANK_CURRENT_FILE_PATH = "<leader>yf"

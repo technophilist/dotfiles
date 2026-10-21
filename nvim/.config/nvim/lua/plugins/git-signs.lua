@@ -11,6 +11,13 @@ return {
 		vim.keymap.set("n", keybindings.GIT_FILE_DIFF, gitsigns.diffthis, { desc = "Show file diff" })
 		-- blame
 		vim.keymap.set("n", keybindings.GIT_BLAME_TOGGLE, ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle git blame" })
+		-- inline diff of changes vs last commit: word-level + deleted lines
+		vim.keymap.set("n", keybindings.GIT_INLINE_DIFF_TOGGLE, function()
+			local enabled = not vim.g.inline_diff_enabled
+			vim.g.inline_diff_enabled = enabled
+			gitsigns.toggle_word_diff(enabled)
+			gitsigns.toggle_deleted(enabled)
+		end, { desc = "Toggle inline diff (added/modified/deleted vs HEAD)" })
 	end,
 
 }
