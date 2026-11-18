@@ -28,6 +28,12 @@ tab_bar_position = "top"
 pane_gaps = false
 pane_outer_borders = false
 
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", "agent"],
+  ["workspace", "tab"],
+]
+
 # --- Terminal ---
 # tmux's TMUX_PANE_DIR cwd hack is unnecessary here: Herdr's "follow" inherits
 # the source pane/workspace working directory for new panes, tabs, and workspaces.
@@ -36,10 +42,9 @@ new_cwd = "follow"
 
 # --- Keybindings: vim motions + tmux muscle memory ---
 [keys]
-# tmux: bind r -> source-file (reload)
-reload_config = "prefix+r"
-# resize_mode defaulted to prefix+r; move it aside to keep reload on r
-resize_mode = "prefix+shift+r"
+# lowercase r enters resize mode; uppercase R reloads config
+reload_config = "prefix+shift+r"
+resize_mode = "prefix+r"
 
 # tmux: bind '"' / '%' -> split-window (cwd-aware)
 split_horizontal = "prefix+\""
@@ -59,16 +64,21 @@ previous_agent = "prefix+shift+a"
 navigate_workspace_up = "k"
 navigate_workspace_down = "j"
 
-# tmux: bind -r H/J/K/L -> resize-pane -L/-D/-U/-R
-# (Herdr defaults used these chords for swap; unbind swap below to reclaim them)
-resize_pane_left = "prefix+shift+h"
-resize_pane_down = "prefix+shift+j"
-resize_pane_up = "prefix+shift+k"
-resize_pane_right = "prefix+shift+l"
-swap_pane_left = ""
-swap_pane_down = ""
-swap_pane_up = ""
-swap_pane_right = ""
+[[keys.command]]
+key = "prefix+ctrl+a"
+type = "popup"
+command = """
+printf 'Rename focused agent [a-z0-9_-]: '
+IFS= read -r name || exit 0
+if [ -n "$name" ]; then
+  "$HERDR_BIN_PATH" agent rename "$HERDR_ACTIVE_PANE_ID" "$name"
+fi
+printf '\\nPress Enter to close...'
+IFS= read -r _ || true
+"""
+description = "Rename focused agent"
+width = "60%"
+height = "30%"
 
 # --- Vim-aware pane navigation: nvim-herdr-navigation (vim-tmux-navigator for Herdr) ---
 # ctrl+h/j/k/l move across Neovim splits first, then fall back to Herdr panes.
