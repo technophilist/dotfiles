@@ -17,10 +17,6 @@ active_row_bg = "#242526"
 selection_bg = "#242526"
 surface0 = "#242526"
 surface1 = "#242526"
-overlay0 = "#242526"
-overlay1 = "#8c8c8c"
-text = "#bbbebf"
-subtext0 = "#8c8c8c"
 blue = "#3994bc"
 
 # --- UI ---
