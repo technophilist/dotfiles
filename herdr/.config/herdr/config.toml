@@ -42,7 +42,10 @@ new_cwd = "follow"
 
 # --- Keybindings: vim motions + tmux muscle memory ---
 [keys]
-# lowercase r enters resize mode; uppercase R reloads config
+# tmux-style: Ctrl+B d detaches; Ctrl+B , opens settings; Ctrl+B s opens goto
+detach = "prefix+d"
+settings = "prefix+comma"
+goto = "prefix+s"
 reload_config = "prefix+shift+r"
 resize_mode = "prefix+r"
 
