@@ -1,0 +1,102 @@
+# ~/.config/herdr/config.toml
+# Port of ~/dotfiles/tmux/.tmux.conf (dark2026 "soft capsule") to Herdr.
+# Herdr is not tmux, so a few tmux-only hacks are handled natively instead.
+
+onboarding = false
+
+# --- Theme: dark2026 "soft capsule" ---
+# tmux status bg #121314 / fg #8c8c8c, capsule #242526, accent #3994bc, text #bbbebf
+[theme]
+name = "vesper"
+
+[theme.custom]
+accent = "#3994bc"
+panel_bg = "#121314"
+sidebar_bg = "#121314"
+active_row_bg = "#242526"
+selection_bg = "#242526"
+surface0 = "#242526"
+surface1 = "#242526"
+overlay0 = "#242526"
+overlay1 = "#8c8c8c"
+text = "#bbbebf"
+subtext0 = "#8c8c8c"
+blue = "#3994bc"
+
+# --- UI ---
+# tmux: `set -g mouse on`, `status-position top`
+# tmux shares dividers between splits and has no outer pane frame.
+[ui]
+mouse_capture = true
+tab_bar_position = "top"
+pane_gaps = false
+pane_outer_borders = false
+
+# --- Terminal ---
+# tmux's TMUX_PANE_DIR cwd hack is unnecessary here: Herdr's "follow" inherits
+# the source pane/workspace working directory for new panes, tabs, and workspaces.
+[terminal]
+new_cwd = "follow"
+
+# --- Keybindings: vim motions + tmux muscle memory ---
+[keys]
+# tmux: bind r -> source-file (reload)
+reload_config = "prefix+r"
+# resize_mode defaulted to prefix+r; move it aside to keep reload on r
+resize_mode = "prefix+shift+r"
+
+# tmux: bind '"' / '%' -> split-window (cwd-aware)
+split_horizontal = "prefix+\""
+split_vertical = "prefix+%"
+
+# tmux: bind h/j/k/l -> select-pane -L/-D/-U/-R
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+# Cycle agents with Ctrl+B then A/Shift+A; A also works in Navigate mode.
+next_agent = "prefix+a"
+previous_agent = "prefix+shift+a"
+
+# Navigate mode: j/k move the Spaces cursor; the Goto picker already uses j/k/l.
+navigate_workspace_up = "k"
+navigate_workspace_down = "j"
+
+# tmux: bind -r H/J/K/L -> resize-pane -L/-D/-U/-R
+# (Herdr defaults used these chords for swap; unbind swap below to reclaim them)
+resize_pane_left = "prefix+shift+h"
+resize_pane_down = "prefix+shift+j"
+resize_pane_up = "prefix+shift+k"
+resize_pane_right = "prefix+shift+l"
+swap_pane_left = ""
+swap_pane_down = ""
+swap_pane_up = ""
+swap_pane_right = ""
+
+# --- Vim-aware pane navigation: nvim-herdr-navigation (vim-tmux-navigator for Herdr) ---
+# ctrl+h/j/k/l move across Neovim splits first, then fall back to Herdr panes.
+# focus_pane_* above stays on prefix+h/j/k/l (Herdr 0.9.5 defaults), so both work.
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "local.vim-navigator.left"
+description = "Vim-aware pane left"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "local.vim-navigator.down"
+description = "Vim-aware pane down"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "local.vim-navigator.up"
+description = "Vim-aware pane up"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "local.vim-navigator.right"
+description = "Vim-aware pane right"
