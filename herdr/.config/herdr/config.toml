@@ -30,8 +30,8 @@ pane_outer_borders = false
 
 [ui.sidebar.agents]
 rows = [
-  ["state_icon", "agent"],
-  ["workspace", "tab"],
+  ["state_icon", "tab"],
+  ["workspace", "agent"],
 ]
 
 # --- Terminal ---
