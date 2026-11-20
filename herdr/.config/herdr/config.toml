@@ -21,12 +21,9 @@ blue = "#3994bc"
 
 # --- UI ---
 # tmux: `set -g mouse on`, `status-position top`
-# tmux shares dividers between splits and has no outer pane frame.
 [ui]
 mouse_capture = true
 tab_bar_position = "top"
-pane_gaps = false
-pane_outer_borders = false
 
 [ui.sidebar.agents]
 rows = [
